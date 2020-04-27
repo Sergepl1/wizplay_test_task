@@ -1,0 +1,10 @@
+{
+  "name": "DB",
+  "connector": "mysql",
+  "url": "",
+  "host": "svc-08dae2a3-70c8-40db-8365-e5f8b8fad6d6-dml.aws-virginia-1.db.memsql.com",
+  "port": 0,
+  "user": "admin",
+  "password": "sv91",
+  "database": "test_task_app"
+}

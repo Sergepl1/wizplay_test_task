@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package player;
+
+// The greeting service definition.
+service PlayerService {
+  // Sends a greeting
+  rpc getPlayer (PlayerRequest) returns (PlayerResponse) {}
+}
+
+// The request message containing the user's name.
+message PlayerRequest {
+  string name = 1;
+}
+
+// The response message containing the greetings
+message PlayerResponse {
+  string name = 1;
+}

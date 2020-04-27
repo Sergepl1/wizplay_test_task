@@ -1,0 +1,6 @@
+{
+  "name": "b",
+  "connector": "loopback-connector-grpc",
+  "url": "0.0.0.0:50051",
+  "spec": "protos/player.proto"
+}
