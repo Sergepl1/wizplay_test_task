@@ -16,15 +16,8 @@ COPY --chown=node package*.json ./
 
 RUN npm install
 
-COPY --chown=node\
-  .npmrc \
-  tsconfig.json \
-  index.js \
-  ./
-
-COPY --chown=node src src
-COPY --chown=node protos protos
-COPY --chown=node public public
+# Bundle app source code
+COPY --chown=node . .
 
 RUN npm run build
 

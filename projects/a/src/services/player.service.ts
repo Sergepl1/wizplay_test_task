@@ -27,18 +27,6 @@ export class PlayerProvider implements Provider<Player> {
   ) {}
 
   async value(): Promise<Player> {
-    // return getService(this.dataSource);
-      // @ts-ignore
-      const grpcService = await getService<Promise>(this.dataSource);
-      return {
-          getPlayer: async ({name}) => {
-              const res = await grpcService.getPlayer({name});
-              // return res
-
-              return client.getPlayer({name}, (err = {}, resp = {})=>{
-                  return resp
-              });
-          },
-      };
+    return getService(this.dataSource);
   }
 }
