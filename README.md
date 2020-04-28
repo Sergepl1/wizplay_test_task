@@ -1,8 +1,10 @@
 # wizplay-test-task
 
 ## How to run
-Launch
+```npm start```
+or using docker:
 ``docker-compose build
    docker-compose up
 ``
+
 
