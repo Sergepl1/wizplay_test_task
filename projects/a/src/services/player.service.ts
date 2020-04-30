@@ -7,6 +7,7 @@ import {client} from '../datasources/rpc.datasource'
 
 export interface Player {
     getPlayer(req: {name: string}): Promise<PlayerModel>;
+    createPlayer(req: {name: string}): Promise<PlayerModel>;
 }
 
 export const PLAYER_SERVICE = 'PlayerService';

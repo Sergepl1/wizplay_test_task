@@ -54,12 +54,23 @@ export function createGRPCPlayerServer(port = '0.0.0.0:50051') {
     ) => {
         console.log('call.request1', call.request)
         const result = await playerRepository.findById(1125899906842625)
-        console.log('result123', result.toJSON())
+        console.log('result1', result.toJSON())
+        callback(null, result.toJSON());
+    };
+
+    const createPlayer: handleUnaryCall<{name: string}, unknown> = async (
+        call,
+        callback,
+    ) => {
+        console.log('call.request2', call.request)
+        const result = await playerRepository.create(call.request)
+        console.log('result2', result.toJSON())
         callback(null, result.toJSON());
     };
 
     server.addService(player.service as ServiceDefinition<unknown>, {
         getPlayer,
+        createPlayer,
     });
 
     server.bind(port, ServerCredentials.createInsecure());
